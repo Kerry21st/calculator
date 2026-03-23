@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+body {
+    background-attachment: fixed ;
+    background-position: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #000;
+    top: 0;
+    left: 0;
+    right: 0;   
+    font-family: sans-serif;
+    height: 100%;
+}
+/* #A5A5A5
+#ff9f0a */
+.calc {
+    font-size: 50px;
+    height: 100%;
+} 
+.display {
+    display: flex;
+    color: #fff;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 180px;
+    margin-right: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.item {
+    border: none;
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    font-size: 70px;
+    font-weight: 500;
+    margin: 15px;
+}
+.numbers {
+    background: #343434;
+    color: #fff;
+}
+.negative, .clean, .procent {
+    background: #A5A5A5;
+    color: #000;
+}
+.negative, .clean {
+    color: #fff;
+}
+.res {
+    width: 415px;
+    border-radius:20%;
+}
+.action {
+    background: #FF9F0A;
+    color: #fff;
+}
