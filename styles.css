@@ -1,61 +1,139 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-body {
-    background-attachment: fixed ;
-    background-position: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background: #000;
-    top: 0;
-    left: 0;
-    right: 0;   
-    font-family: sans-serif;
-    height: 100%;
+
+* {
+    box-sizing: border-box;
 }
-/* #A5A5A5
-#ff9f0a */
+
+body {
+    background: #000;
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .calc {
-    font-size: 50px;
-    height: 100%;
-} 
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .display {
     display: flex;
     color: #fff;
     justify-content: flex-end;
     align-items: flex-end;
-    font-size: 180px;
+    font-size: clamp(60px, 15vw, 180px);
     margin-right: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    min-height: 180px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
+
 .buttons {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
+
 .item {
     border: none;
-    border-radius: 100%;
-    height: 200px;
-    width: 200px;
-    font-size: 70px;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    font-size: clamp(24px, 5vw, 70px);
     font-weight: 500;
-    margin: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+/* Адаптация для кнопки равно */
+.res {
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+/* Эффект нажатия для всех кнопок */
+.item:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
 .numbers {
     background: #343434;
     color: #fff;
 }
+
+.numbers:hover {
+    background: #4a4a4a;
+}
+
 .negative, .clean, .procent {
     background: #A5A5A5;
     color: #000;
 }
-.negative, .clean {
-    color: #fff;
+
+.negative:hover, .clean:hover, .procent:hover {
+    background: #bdbdbd;
 }
-.res {
-    width: 415px;
-    border-radius:20%;
-}
+
 .action {
     background: #FF9F0A;
     color: #fff;
+}
+
+.action:hover {
+    background: #ffb43a;
+}
+
+/* Адаптация для разных размеров экрана */
+@media (min-width: 768px) {
+    .calc {
+        margin: 50px;
+        max-width: 600px;
+        padding: 30px;
+        background: #1a1a1a;
+        border-radius: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .display {
+        font-size: 100px;
+        margin-bottom: 40px;
+        min-height: 120px;
+    }
+    
+    .buttons {
+        gap: 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .calc {
+        max-width: 700px;
+    }
+    
+    .display {
+        font-size: 120px;
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 480px) {
+    .buttons {
+        gap: 8px;
+    }
+    
+    .calc {
+        padding: 10px;
+    }
+    
+    .display {
+        margin-right: 10px;
+        font-size: 60px;
+        min-height: 80px;
+    }
 }
